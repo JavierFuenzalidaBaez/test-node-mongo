@@ -1,0 +1,37 @@
+<h1>Hola mundo</h1>
+
+<form action="/tasks/add" method="POST">
+  <div
+    style="display: flex; flex-direction: column; align-items: center; gap: 8px;"
+  >
+    <input type="text" name="title" placeholder="title" />
+    <textarea
+      name="description"
+      placeholder="description..."
+      cols="30"
+      rows="10"
+    ></textarea>
+    <button type="submit">add</button>
+  </div>
+</form>
+
+<h4>Lista</h4>
+<ul>
+  {{#each misTareas}}
+
+    <li>
+      <div style="display: flex; gap: 8px; margin-top: 8px">
+        <strong>{{title}}</strong>
+        -
+        {{description}}
+        <a href="/edit/{{_id}}">edit</a>
+        <a href="/delete/{{_id}}">delete</a>
+        {{#if done}}
+          COMPLETADA
+        {{else}}
+          <a href="/done/{{_id}}">done</a>
+        {{/if}}
+      </div>
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,21 @@
+<h1>edit</h1>
+
+<form action="/edit/{{miTarea._id}}" method="POST">
+  <div
+    style="display: flex; flex-direction: column; align-items: center; gap: 8px;"
+  >
+    <input
+      type="text"
+      name="title"
+      placeholder="title"
+      value="{{miTarea.title}}"
+    />
+    <textarea
+      name="description"
+      placeholder="description..."
+      cols="30"
+      rows="10"
+    >{{miTarea.description}}</textarea>
+    <button type="submit">add</button>
+  </div>
+</form>
